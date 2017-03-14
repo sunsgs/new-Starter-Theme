@@ -40,3 +40,32 @@
 }
 
 @include col();
+
+
+
+// Core mixins
+@mixin control-shadow($color: $primary-color) {
+  box-shadow: 0 0 0 .2rem fade($color, 15%);
+}
+
+@mixin control-transition() {
+  transition: all .2s ease;
+}
+
+@mixin toast-variant($color) {
+  background: fade($color, 90%);
+  border-color: $color;
+}
+
+@mixin label-base() {
+  border-radius: $border-radius;
+  display: inline-block;
+  line-height: 1;
+  padding: .3rem .4rem;
+  vertical-align: baseline;
+}
+
+@mixin label-variant($color) {
+  background: $color;
+  color: $light-color;
+}

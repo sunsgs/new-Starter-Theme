@@ -1,3 +1,12 @@
+<header class="navbar">
+  <section class="navbar-primary">
+    <a href="#" class="navbar-brand mr-10">Spectre.css</a>
+  </section>
+  <section class="navbar-section">
+    <a href="#" class="btn btn-link">Docs</a>
+    <a href="https://github.com/picturepan2/spectre" class="btn btn-link">GitHub</a>
+  </section>
+</header>
 <div class="container">
     <div class="row">
       <div class="grid-md-6">
