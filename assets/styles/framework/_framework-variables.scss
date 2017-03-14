@@ -1,14 +1,12 @@
 // Core variables
 
 // Global
-$html-font-size: 10px;
 $html-line-height: 1.428571429;
 $body-bg: #fff;
 $body-font-color: #333;
 $body-font-size: 1.4rem;
 
 // Fonts
-// Credit: https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/
 $base-font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
 $fallback-font-family: "Helvetica Neue", sans-serif;
 $body-font-family: $base-font-family, $fallback-font-family;
@@ -47,9 +45,9 @@ $code-color: #e06870;
 $highlight-color: #ffe9b3;
 
 // Responsive breakpoints
-$size-xs: 480px;
-$size-sm: 600px;
-$size-md: 840px;
-$size-lg: 960px;
-$size-xl: 1280px;
-$size-2x: 1440px;
+$breakpoints: (
+ xs: 480px, sm: 600px, md: 840px, lg: 960px, xl: 1280px, 2x: 1440px
+);
+
+// Number of Columns
+$grid-columns: 12!default;

@@ -22,17 +22,6 @@
   margin-right: -$layout-gutter;
 }
 
-@mixin col($col) {
-  width: percentage(1/$col);
-  padding: $layout-gutter;
-}
-
-@for $i from 1 to 12 {
-  .col-#{$i} {
-    @include col($i);
-  }
-}
-
 .bg {
   height: 100px;
   background: #f00;

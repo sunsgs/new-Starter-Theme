@@ -6,7 +6,37 @@
   }
 }
 
-// Usage as a mixin
-.element {
-  @include clearfix;
+// media queries
+@mixin MQ($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media only screen and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`."+"Please make sure it is defined in `$breakpoints` map.";
+  }
 }
+/* USAGE
+.div {
+  @include MQ('xs') {
+    width: 100px;
+  }
+}
+*/
+
+// Generate columns
+@mixin col() {
+  @each $item, $breakpoint in $breakpoints {
+    @for $i from 1 to $grid-columns {
+      .grid-#{$item}-#{$i} {
+        padding: $layout-gutter;
+        @include MQ($item) {
+          flex: none;
+          width: percentage(($i / $grid-columns));
+        }
+      }
+    }
+  }
+}
+
+@include col();
