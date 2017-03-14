@@ -25,9 +25,9 @@
 */
 
 // Generate columns
-@mixin col() {
+@mixin make-columns() {
   @each $item, $breakpoint in $breakpoints {
-    @for $i from 1 to $grid-columns {
+    @for $i from 1 to $grid-columns +1 {
       .grid-#{$item}-#{$i} {
         padding: $layout-gutter;
         @include MQ($item) {
@@ -39,10 +39,21 @@
   }
 }
 
-@include col();
 
-
-
+// Align
+@mixin center($value) {
+  @if $value == 'y' {
+    margin-top: 50%;
+    transform: translateY(-50%);
+  } @else if $value == "x" {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  } @else if $value == "xy" {
+    margin-left: 50%;
+    margin-top: 50%;
+    transform: translate(-50%);
+  }
+}
 // Core mixins
 @mixin control-shadow($color: $primary-color) {
   box-shadow: 0 0 0 .2rem fade($color, 15%);
